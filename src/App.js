@@ -1,6 +1,6 @@
 import Calculator from './components/Calculator';
 
-export const App = () => (
+const App = () => (
   <div>
     <Calculator />
   </div>
