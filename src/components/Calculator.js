@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Calculator = () => (
+class Calculator extends React.Component {
+    render() {
+        return (
   <div className="calculator">
     <div className="calc-display">0</div>
     <div className="calc-main">
@@ -26,8 +28,9 @@ const Calculator = () => (
       <div className="btn-operators">+</div>
       <div className="btn-operators">=</div>
     </div>
-
   </div>
-);
+  )
+}
+}
 
 export default Calculator;
