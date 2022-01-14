@@ -1,33 +1,52 @@
 import React from 'react';
+import calculate from '../logic/calculate';
 
 class Calculator extends React.Component { // eslint-disable-line
+  constructor(props) {
+    super(props);
+    this.handleEvent = this.handleEvent.bind(this);
+    this.state = {
+      total: '0',
+      next: null,
+      operation: null,
+    };
+  }
+
+  handleEvent = (e) => {
+    this.setState((previousState) => calculate(previousState, e.target.innerText));
+  }
 
   render() {
+    const { total, next, operation } = this.state;
     return (
       <div className="calculator">
-        <div className="calc-display">0</div>
+        <div className="calc-display">
+          {total}
+          {operation}
+          {next}
+        </div>
         <div className="calc-main">
-          <div className="btn">AC</div>
-          <div className="btn">+/-</div>
-          <div className="btn">%</div>
-          <div className="btn">7</div>
-          <div className="btn">8</div>
-          <div className="btn">9</div>
-          <div className="btn">4</div>
-          <div className="btn">5</div>
-          <div className="btn">6</div>
-          <div className="btn">1</div>
-          <div className="btn">2</div>
-          <div className="btn">3</div>
-          <div className="btn calc-zero">0</div>
-          <div className="btn btn-point">.</div>
+          <button className="btn" onClick={this.handleEvent} type="button">AC</button>
+          <button className="btn" onClick={this.handleEvent} type="button">+/-</button>
+          <button className="btn" onClick={this.handleEvent} type="button">%</button>
+          <button className="btn" onClick={this.handleEvent} type="button">7</button>
+          <button className="btn" onClick={this.handleEvent} type="button">8</button>
+          <button className="btn" onClick={this.handleEvent} type="button">9</button>
+          <button className="btn" onClick={this.handleEvent} type="button">4</button>
+          <button className="btn" onClick={this.handleEvent} type="button">5</button>
+          <button className="btn" onClick={this.handleEvent} type="button">6</button>
+          <button className="btn" onClick={this.handleEvent} type="button">1</button>
+          <button className="btn" onClick={this.handleEvent} type="button">2</button>
+          <button className="btn" onClick={this.handleEvent} type="button">3</button>
+          <button className="btn calc-zero" onClick={this.handleEvent} type="button">0</button>
+          <button className="btn btn-point" onClick={this.handleEvent} type="button">.</button>
         </div>
         <div className="calc-operators">
-          <div className="btn-operators">÷</div>
-          <div className="btn-operators">x</div>
-          <div className="btn-operators">-</div>
-          <div className="btn-operators">+</div>
-          <div className="btn-operators">=</div>
+          <button className="btn-operators" onClick={this.handleEvent} type="button">÷</button>
+          <button className="btn-operators" onClick={this.handleEvent} type="button">x</button>
+          <button className="btn-operators" onClick={this.handleEvent} type="button">-</button>
+          <button className="btn-operators" onClick={this.handleEvent} type="button">+</button>
+          <button className="btn-operators" onClick={this.handleEvent} type="button">=</button>
         </div>
 
       </div>
@@ -35,35 +54,5 @@ class Calculator extends React.Component { // eslint-disable-line
     );
   }
 }
-
-// const Calculator = () => (
-//   <div className="calculator">
-//     <div className="calc-display">0</div>
-//     <div className="calc-main">
-//       <div className="btn">AC</div>
-//       <div className="btn">+/-</div>
-//       <div className="btn">%</div>
-//       <div className="btn">7</div>
-//       <div className="btn">8</div>
-//       <div className="btn">9</div>
-//       <div className="btn">4</div>
-//       <div className="btn">5</div>
-//       <div className="btn">6</div>
-//       <div className="btn">1</div>
-//       <div className="btn">2</div>
-//       <div className="btn">3</div>
-//       <div className="btn calc-zero">0</div>
-//       <div className="btn btn-point">.</div>
-//     </div>
-//     <div className="calc-operators">
-//       <div className="btn-operators">÷</div>
-//       <div className="btn-operators">x</div>
-//       <div className="btn-operators">-</div>
-//       <div className="btn-operators">+</div>
-//       <div className="btn-operators">=</div>
-//     </div>
-
-//   </div>
-// );
 
 export default Calculator;
