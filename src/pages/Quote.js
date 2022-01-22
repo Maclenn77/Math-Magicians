@@ -1,13 +1,15 @@
 import React from 'react';
+import './Quote.css';
 
 const Quote = () => (
-    <div className='quote'>
-      <p>
-        What is mathematics? It is only a systematic effort of solving puzzles posed by nature.
-        <br />
-        <span>— Shakuntala Devi</span>
-      </p>
-    </div>
-  );
-  
-  export default Quote;
+  <section className="quote">
+    <p>
+      Mathematics knows no races or geographic boundaries;
+      for mathematics, the cultural world is one country.
+      <br />
+      <span>— David Hilbert, German mathematician</span>
+    </p>
+  </section>
+);
+
+export default Quote;
