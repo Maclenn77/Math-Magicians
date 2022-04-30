@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mayan+Numerals&display=swap');
+
+.calc-display,
+.btn {
+    font-family: 'Noto Sans Mayan Numerals', sans-serif;
+    font-size: large;
+}
