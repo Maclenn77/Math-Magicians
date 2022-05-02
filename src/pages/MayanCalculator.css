@@ -5,3 +5,8 @@
     font-family: 'Noto Sans Mayan Numerals', sans-serif;
     font-size: large;
 }
+
+p {
+  writing-mode: vertical-rl;
+  text-orientation: upright; 
+}
