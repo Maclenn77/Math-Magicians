@@ -1,12 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mayan+Numerals&display=swap');
 
-.calc-display,
+.mayan-calculator {
+    display: grid;
+    background-color: #7c43bd;
+    padding: 10px;
+    border-radius: 5%;
+    gap: 3px;
+    /* max-width: 202px; */
+    margin: 20px auto;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "sidebar header header header"
+      "sidebar operators operators"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main";
+  }
+
+.calc-display-m,
 .btn {
     font-family: 'Noto Sans Mayan Numerals', sans-serif;
-    font-size: large;
+    font-size: x-large;
 }
 
-p {
+.btn {
+    border-radius: 5%;
+    box-shadow: hsl(236, 6%, 55%);
+    padding: 2px;
+}
+
+.calc-display-m {
+  grid-area: sidebar;
+  border-color: #000;
+  border: 3px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 8;
+  color: #000;
+  background-color: #f8f8f8;
+  text-align: left;
   writing-mode: vertical-rl;
   text-orientation: upright; 
+}
+
+.calc-main-m {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-column-start: 2;
+  grid-column-end: 8;
+  grid-row-start: 3;
+  grid-row-end: 8;
+  background-color: #7c43bd;
+  text-align: center;
+}
+
+.calc-operators-m {
+  display: grid;
+  grid-area: operators;
+  gap: 1px;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-row: 2 / 3;
+  grid-column-start: 2;
+  grid-column-end: 8;
+  background-color: #7c43bd;
+  text-align: center;
+}
+
+.calc-header {
+  display: grid;
+  grid-area: header;
+  gap: 1px;
+  grid-column-start: 2;
+  grid-column-end: 8;
+  grid-row: 1;
+  grid-template-columns: 50% 50%;
 }
