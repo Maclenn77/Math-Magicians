@@ -1,5 +1,5 @@
-import operate from './operate';
-import { convertToMayan, convertToUnicode } from './converter';
+import operate from './mayan_operate';
+import { convertToMayan, convertToUnicode, convertToVigesimal } from './converter';
 
 function isNumber(item) {
   return !!item.match(/[0-9a-j]+/);
@@ -51,31 +51,12 @@ export default function mayanCalculate(obj, buttonName) {
     };
   }
 
-  if (buttonName === '.') {
-    if (obj.next) {
-      if (obj.next.includes('.')) {
-        return { ...obj };
-      }
-      return { ...obj, next: `${obj.next}.` };
-    }
-    if (obj.operation) {
-      return { next: '0.' };
-    }
-    if (obj.total) {
-      if (obj.total.includes('.')) {
-        return {};
-      }
-      return { total: `${obj.total}.` };
-    }
-    return { total: '0.' };
-  }
-
   if (buttonName === '=') {
     if (obj.next && obj.operation) {
       const result = operate(obj.total, obj.next, obj.operation);
       const resultInMayan = convertToMayan(result).join('');
       return {
-        total: result,
+        total: convertToVigesimal(result),
         next: null,
         operation: null,
         mayan: resultInMayan,
@@ -85,15 +66,15 @@ export default function mayanCalculate(obj, buttonName) {
     return {};
   }
 
-  if (buttonName === '+/-') {
-    if (obj.next) {
-      return { ...obj, next: (-1 * parseFloat(obj.next)).toString() };
-    }
-    if (obj.total) {
-      return { ...obj, total: (-1 * parseFloat(obj.total)).toString() };
-    }
-    return {};
-  }
+  // if (buttonName === '+/-') {
+  //   if (obj.next) {
+  //     return { ...obj, next: (-1 * parseFloat(obj.next)).toString() };
+  //   }
+  //   if (obj.total) {
+  //     return { ...obj, total: (-1 * parseFloat(obj.total)).toString() };
+  //   }
+  //   return {};
+  // }
 
   // Button must be an operation
 

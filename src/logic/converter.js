@@ -1,6 +1,5 @@
 export const convertToMayan = (number) => {
   const result = parseInt(number, 10).toString(20);
-  console.log(result);
   const mayanResult = [];
   for (let i = 0; i < result.length; i++) {
     mayanResult.push(vigesimalMayanNumeral.get(result[i]));
@@ -36,8 +35,7 @@ const vigesimalMayanNumeral = new Map([
   ['j', '\u{1d2f3}'],
 ]);
 
-const convertToVigesimal = (number) => {
-  const vigesimalNumber = parseInt(number, 20).toString;
-  console.log(`Converted ${{ vigesimalNumber }}`);
+export const convertToVigesimal = (number) => {
+  const vigesimalNumber = parseInt(number, 10).toString(20);
   return vigesimalNumber;
 };
