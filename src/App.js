@@ -18,10 +18,10 @@ class App extends React.Component { // eslint-disable-line
         <div>
           <Navbar />
           <Routes>
-            <Route exact path="/math-magicians/calc" element={<Calc />} />
-            <Route exact path="/math-magicians/" element={<Home />} />
-            <Route exact path="/math-magicians/mayan" element={<Mayan />} />
-            <Route exact path="/math-magicians/quote" element={<Quote />} />
+            <Route exact path="/calc" element={<Calc />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/mayan" element={<Mayan />} />
+            <Route exact path="/quote" element={<Quote />} />
           </Routes>
         </div>
       </Router>
