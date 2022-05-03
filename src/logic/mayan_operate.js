@@ -1,10 +1,8 @@
 import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
-  console.log(numberOne, numberTwo, operation)
   const one = Big(parseInt(numberOne, 20).toString(10));
   const two = Big(parseInt(numberTwo, 20).toString(10));
-  console.log(one.c, two)
   if (operation === '+') {
     return one.plus(two).toString();
   }

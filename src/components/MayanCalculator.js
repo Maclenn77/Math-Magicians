@@ -10,7 +10,7 @@ const MayanCalculator = () => {
   return (
     <div className="mayan-calculator">
       <div className="calc-display-m">
-        <p className='calc-mayan'>
+        <p className="calc-mayan">
           {previousState.mayan}
           {previousState.operation}
           {previousState.nextMayan}
@@ -56,9 +56,9 @@ const MayanCalculator = () => {
         <button className="btn-operators" onClick={handleEvent} type="button" id="-">-</button>
         <button className="btn-operators" onClick={handleEvent} type="button" id="+">+</button>
       </div>
-      <div className='calc-header'>
-         <button className="btn" onClick={handleEvent} type="button" id="AC">AC</button>
-         <button className="btn-operators" onClick={handleEvent} type="button" id="=">=</button>
+      <div className="calc-header">
+        <button className="btn" onClick={handleEvent} type="button" id="AC">AC</button>
+        <button className="btn-operators" onClick={handleEvent} type="button" id="=">=</button>
       </div>
 
     </div>

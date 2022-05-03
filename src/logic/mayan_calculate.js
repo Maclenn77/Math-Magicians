@@ -32,7 +32,11 @@ export default function mayanCalculate(obj, buttonName) {
     // If there is an operation, update next
     if (obj.operation) {
       if (obj.next) {
-        return { ...obj, next: obj.next + buttonName, nextMayan: obj.nextMayan + convertToUnicode(buttonName) };
+        return {
+          ...obj,
+          next: obj.next + buttonName,
+          nextMayan: obj.nextMayan + convertToUnicode(buttonName),
+        };
       }
       return { ...obj, next: buttonName, nextMayan: convertToUnicode(buttonName) };
     }
