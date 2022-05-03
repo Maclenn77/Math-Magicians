@@ -7,6 +7,7 @@ import {
 import Calc from './pages/Calculator';
 import Quote from './pages/Quote';
 import Home from './pages/Home';
+import Mayan from './pages/MayanCalculator';
 import Navbar from './components/Navbar';
 
 class App extends React.Component { // eslint-disable-line
@@ -19,6 +20,7 @@ class App extends React.Component { // eslint-disable-line
           <Routes>
             <Route exact path="/calc" element={<Calc />} />
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/mayan" element={<Mayan />} />
             <Route exact path="/quote" element={<Quote />} />
           </Routes>
         </div>

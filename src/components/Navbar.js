@@ -16,6 +16,9 @@ const Navbar = () => (
       <li>
         <Link to="/quote">Quote</Link>
       </li>
+      <li>
+        <Link to="/mayan">Mayan</Link>
+      </li>
     </ul>
   </nav>
 );

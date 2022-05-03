@@ -122,6 +122,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+### TO DO
+
+- Mayan Calculator (check Kanban board)
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
