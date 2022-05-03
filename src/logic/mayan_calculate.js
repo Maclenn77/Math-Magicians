@@ -1,5 +1,5 @@
 import operate from './operate';
-import { convertToMayan } from './converter';
+import { convertToMayan, convertToUnicode } from './converter';
 
 function isNumber(item) {
   return !!item.match(/[0-9a-j]+/);
@@ -21,31 +21,32 @@ export default function mayanCalculate(obj, buttonName) {
       total: '0',
       next: null,
       operation: null,
-      mayan: '\u{1d2e0}'
+      mayan: '\u{1d2e0}',
     };
   }
 
   if (isNumber(buttonName)) {
     if (buttonName === '0' && obj.next === '0') {
-      return {};
+      return { };
     }
     // If there is an operation, update next
     if (obj.operation) {
       if (obj.next) {
-        return { ...obj, next: obj.next + buttonName, nextMayan: obj.next + buttonName};
+        return { ...obj, next: obj.next + buttonName, nextMayan: obj.nextMayan + convertToUnicode(buttonName) };
       }
-      return { ...obj, next: buttonName, nextMayan: obj.next };
+      return { ...obj, next: buttonName, nextMayan: convertToUnicode(buttonName) };
     }
     // If there is no operation, update next and clear the value
     if (obj.next) {
       return {
         next: obj.next + buttonName,
-        nextMayan: convertToMayan(obj.next) + buttonName,
+        nextMayan: obj.nextMayan + convertToUnicode(buttonName),
         total: null,
       };
     }
     return {
       next: buttonName,
+      nextMayan: convertToUnicode(buttonName),
       total: null,
     };
   }
@@ -116,6 +117,7 @@ export default function mayanCalculate(obj, buttonName) {
     return {
       total: operate(obj.total, obj.next, obj.operation),
       next: null,
+      nextMayan: null,
       operation: buttonName,
     };
   }
