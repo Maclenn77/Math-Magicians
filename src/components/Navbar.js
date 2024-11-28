@@ -5,10 +5,10 @@ import './Navbar.css';
 
 const Navbar = () => (
   <nav>
-    <h1><Link to="/">Math Magicians</Link></h1>
+    <h1><Link to="/">Mayan Calculator</Link></h1>
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/">Mayan Calc</Link>
       </li>
       <li>
         <Link to="/calc">Calculator</Link>
@@ -17,7 +17,7 @@ const Navbar = () => (
         <Link to="/quote">Quote</Link>
       </li>
       <li>
-        <Link to="/mayan">Mayan</Link>
+        <Link to="/about">About</Link>
       </li>
     </ul>
   </nav>
