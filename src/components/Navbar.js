@@ -11,7 +11,7 @@ const Navbar = () => (
         <Link to="/">Mayan Calc</Link>
       </li>
       <li>
-        <Link to="/calc">Calculator</Link>
+        <Link to="/calc">Decimal Calc</Link>
       </li>
       <li>
         <Link to="/quote">Quote</Link>

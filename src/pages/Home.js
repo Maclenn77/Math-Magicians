@@ -23,6 +23,14 @@ const Home = () => (
       features that support other functionality that is not normally known simply
       as calculation.
     </p>
+    <p>
+      Created by
+      <a href="https://juanpaulo.xyz"> Juan Paulo</a>
+      .
+      <br />
+      Check Repository:
+      <a href="https://github.com/maclenn77/math-magicians">Mayan Calculator</a>
+    </p>
   </section>
 );
 export default Home;

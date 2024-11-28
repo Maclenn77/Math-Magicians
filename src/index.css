@@ -33,3 +33,7 @@ section {
   max-width: 80vh;
   margin: auto;
 }
+
+a {
+  color: #ff4081;
+}
