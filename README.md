@@ -19,12 +19,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://maclenn77.github.io/math-magicians/)
-
-## Deployment
-
-- [Heroku](https://jp-math-magicians.herokuapp.com/)
-- [Netlify](https://clever-saha-5264f9.netlify.app/)
+[Live Demo Link](https://mayan-calculator.juanpaulo.xyz)
 
 
 ## Getting Started
